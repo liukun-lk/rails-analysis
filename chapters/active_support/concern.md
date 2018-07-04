@@ -154,7 +154,7 @@ end
 ### 有趣的 commit
 
 1. [Use symbols instead of strings in ActiveSupport::Concern](https://github.com/rails/rails/pull/10909)
-该 PR 是将 `ActiveSupport::Concern` 内部的字符串都换成 symbol 来防止对象的再创建，最后有相关的 benchmark。
+该 PR 是将 `ActiveSupport::Concern` 内部的字符串都换成 symbol 来减少对象的创建，最后有相关的 benchmark。
 
 2. [Use public Module#include, in favor of https://bugs.ruby-lang.org/issues/8846](https://github.com/rails/rails/pull/18767)
 该 PR 是 Ruby 2.1.0 将原本私有的 `include` 方法变成公有方法。
@@ -199,7 +199,7 @@ Parent.respond_to? :foo # returns true
 
 ---
 
-### 课外概念 - class_eval and instance_eval
+### 延伸阅读 - class_eval and instance_eval
 ##### class_eval 打开类
 首先 `class_eval` 的调用者（receiver）必须是一个类（因为 Ruby 中类也是一个对象，也可以被当做一个对象调用），而在 `class_eval block` 的内部，`self` 即为 `receiver` 类本身。
 
