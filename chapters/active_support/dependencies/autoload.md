@@ -22,9 +22,7 @@ person = Person.new
 person.greet
 ```
 在 main.rb 中我们并不能直接使用 person.rb 中的代码，需要先把 person.rb 中的代码 require 进来。
-```ruby
-# codes/main.rb
-
+```ruby:codes/main.rb
 require './person'
 ```
 这是最基本的 require 用法，直接加上相对路径，但是使用相对路径时，默认的当前路径并不是固定不变的，而绝对路径的话，可能换个环境就要做出相应变化。因此 Ruby 给出了两个全局变量 `$LOADED_FEATURES(aka $")，$LOAD_PATH(aka $:)`。其中，`$LOADED_FEATURES` 里保存了已经 require 过的文件，`$LOAD_PATH` 里保存了查找文件的路径，两者都是数组结构。
@@ -49,8 +47,7 @@ $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 不过和 require 类似的，还有 load 和 autoload 两个方法。这里介绍一下 autoload，autoload 是 Ruby 中实现懒加载的方法。
 
 当我们使用 autoload 的时候，仅仅是注册了一个常量，真正的代码并没有被 require 进来，只有当我们第一次使用这个常量的时候，才会去 require 这个注册的文件。以一开始的代码为例：
-```ruby
-# codes/main.rb
+```ruby:codes/main.rb
 autoload :Person, './person.rb'
 puts "LOADED_FEATURES: #{$LOADED_FEATURES.select {|item| item.index('person')}}" # => LOADED_FEATURES: []
 p = Person.new
@@ -108,8 +105,7 @@ end
 `ActiveSupport::Autoload` 就会自动猜出 `Model` 和 `Cache` 所在的文件路径，并将文件加载到项目中。
 
 关键代码如下：
-```ruby
-# rails/activesupport/lib/active_support/dependencies/autoload.rb#L37
+```ruby:rails/activesupport/lib/active_support/dependencies/autoload.rb#L37
 def autoload(const_name, path = @_at_path)
   unless path
     full = [name, @_under_path, const_name.to_s].compact.join("::")
