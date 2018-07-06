@@ -1,0 +1,10 @@
+{
+  "plugins": ["multipart", "toggle-chapters", "codeblock-filename", "tbfed-pagefooter", "copy-code-button"],
+  "pluginsConfig": {
+    "tbfed-pagefooter": {
+      "copyright":"Copyright &copy Liu Kun 2018",
+      "modify_label": "该文件修订时间：",
+      "modify_format": "YYYY-MM-DD HH:mm:ss"
+    }
+  }
+}
