@@ -33,3 +33,22 @@
 - https://bugs.ruby-lang.org/issues/5654
 - https://bugs.ruby-lang.org/issues/921
 - [Do we embrace Kernel#autoload ? ](https://github.com/ruby-concurrency/concurrent-ruby/issues/395)
+
+##### 懒加载
+- https://github.com/rails/rails/issues/33239
+- https://github.com/rails/rails/issues/15854
+
+##### websocket
+- https://github.com/zhangkaitao/websocket-protocol/wiki/5.%E6%95%B0%E6%8D%AE%E5%B8%A7
+- https://ruby-china.org/topics/37133
+
+### 存在疑惑点
+- rails 的日志是如何设计的？以及使用到了何种日志格式？
+- rails 的启动流程是如何的？
+- rails 的请求流程是如何的？
+- rails 的回调是如何设计的？
+- rails 的on_load
+- rails 的加密master.key
+
+### bundle config
+- frozen Gemfile.lock
