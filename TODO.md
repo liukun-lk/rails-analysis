@@ -25,6 +25,8 @@
 2. 基于 engine 的 eager_load! 的实现，需要去设置变量 eager_load_paths。railties/lib/rails/engine/configuration.rb 有设置
 
 ##### Rails 中的类加载机制
+- grape-entity 中 include 一个 module 时，module 里面定义的方法无法在 expose 中被调用到，需添加 ActiveSupport::Concern，再在 included 里面定义方法
+- [总结一下 Ruby 中的对象和类模型](https://ruby-china.org/topics/25325)
 - https://ruby-china.org/topics/26034
 - [Rails autoloading — how it works, and when it doesn't](https://urbanautomaton.com/blog/2013/08/27/rails-autoloading-hell/)
 
